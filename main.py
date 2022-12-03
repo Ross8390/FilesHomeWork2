@@ -29,9 +29,9 @@ def get_shop_list_by_dishes(dishes, person_count):
             for ingredients in cook_book[dish]:
                 dict_ing = {}
                 if ingredients['ingredient_name'] in new_dict:
-                    quantity = cook_dict[ingredients['ingredient_name']].get('quantity') + \
+                    quantity = new_dict[ingredients['ingredient_name']].get('quantity') + \
                                ingredients['quantity'] * person_count
-                    cook_dict[ingredients['ingredient_name']].update(quantity=quantity)
+                    new_dict[ingredients['ingredient_name']].update(quantity=quantity)
                 else:
                     dict_ing['measure'] = ingredients['measure']
                     dict_ing['quantity'] = ingredients['quantity'] * person_count
